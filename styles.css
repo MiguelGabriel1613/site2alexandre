@@ -37,12 +37,15 @@ main {
     flex: 1;
 }
 
+/* Garante que as seções tenham um tamanho adequado */
 section {
-    margin-bottom: 30px;
+    max-width: 800px; /* Define um limite para não ficar muito largo */
+    margin: 20px auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que nada saia da div */
 }
 
 h2 {
@@ -65,20 +68,22 @@ a:hover {
     color: var(--cor-quintenaria);
 }
 
-/* CORREÇÃO NAS IMAGENS PARA NÃO SAÍREM DA DIV */
+/* IMAGENS AGORA FICAM SEMPRE DENTRO DA DIV */
 .imagem-padrao {
-    max-width: 90%; /* Garante que não ultrapasse o tamanho da div */
-    height: auto;
+    max-width: 100%; /* Nunca ultrapassa a largura do container */
+    max-height: 400px; /* Evita imagens gigantes */
     display: block;
     margin: 20px auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: contain; /* Evita cortes estranhos nas imagens */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
 }
 
-/* GARANTE QUE AS SEÇÕES NÃO FIQUEM MUITO LARGAS EM TELAS GRANDES */
-section {
-    max-width: 800px;
+/* Para imagens muito largas, forçar largura máxima */
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: auto;
 }
 
