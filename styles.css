@@ -70,7 +70,7 @@ a:hover {
 
 /* IMAGENS AGORA FICAM SEMPRE DENTRO DA DIV */
 .imagem-padrao {
-    max-width: 100%; /* Nunca ultrapassa a largura do container */
+    max-width: 80%; /* Nunca ultrapassa a largura do container */
     max-height: 400px; /* Evita imagens gigantes */
     display: block;
     margin: 20px auto;
@@ -81,7 +81,7 @@ a:hover {
 
 /* Para imagens muito largas, forçar largura máxima */
 section img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     display: block;
     margin: auto;
@@ -94,4 +94,36 @@ footer {
     color: var(--cor-terciaria);
     width: 100%;
     margin-top: auto;
+}
+
+/* Responsividade para telas de PC */
+@media (min-width: 1024px) {
+    /* Imagens menores em telas maiores */
+    .imagem-padrao {
+        max-height: 300px; /* Reduz a altura das imagens em telas maiores */
+    }
+
+    /* As seções com margens fixas */
+    section {
+        margin: 20px auto;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    /* Imagens maiores no celular */
+    .imagem-padrao {
+        max-height: 250px; /* Limita a altura para telas menores */
+    }
+
+    /* Ajuste das margens no celular */
+    section {
+        margin: 10px; /* Deixa uma margem confortável de 10px */
+        padding: 15px; /* Reduz o padding para mais espaço */
+    }
+
+    /* Centralização das divs */
+    .content, section {
+        margin: 10px; /* Ajusta a margem para evitar que fiquem coladas */
+    }
 }
