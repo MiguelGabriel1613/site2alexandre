@@ -65,13 +65,21 @@ a:hover {
     color: var(--cor-quintenaria);
 }
 
+/* CORREÇÃO NAS IMAGENS PARA NÃO SAÍREM DA DIV */
 .imagem-padrao {
-    max-width: 100%;
+    max-width: 90%; /* Garante que não ultrapasse o tamanho da div */
     height: auto;
     display: block;
     margin: 20px auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: contain; /* Evita cortes estranhos nas imagens */
+}
+
+/* GARANTE QUE AS SEÇÕES NÃO FIQUEM MUITO LARGAS EM TELAS GRANDES */
+section {
+    max-width: 800px;
+    margin: auto;
 }
 
 footer {
